@@ -4,7 +4,6 @@
   connection: local
 
   vars: 
-    inventory_name: ''
     mysql_user: ''
     mysql_password: ''
     mysql_user_name: ''
