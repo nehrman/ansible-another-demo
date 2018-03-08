@@ -12,7 +12,7 @@
     - name: Ensure user "{{ user_name }}" is present
       user:
         name: "{{ user_name }}"
-        password: "{{ user_pwd }}“
+        password: "{{ user_pwd }}"
         generate_ssh_key: "{{ user_ssh_key }}"
         groups: "{{ user_groups }}"
         ssh_key_bits: 2048
