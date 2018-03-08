@@ -1,24 +1,20 @@
 ---
-- name: Manage MySQL Servers 
+- name: Manage MySQL Databases
   hosts: DB
   connection: local
 
   vars: 
     mysql_user: ''
     mysql_password: ''
-    mysql_user_name: ''
-    mysql_user_password: ''
-    mysql_user_priv: ''
-    mysql_user_host: ''
+    mysql_db_name: ''
+    mysql_db_encoding: ''
 
   tasks: 
-    - name: Create MySQL User
-      mysql_user:
+    - name: Ensure MySQL "{{ mysql_db_name }}" is present
+      mysql_db:
         login_host: "{{ inventory_hostname }}"
         login_user: "{{ mysql_user }}"
         login_password: "{{ mysql_password }}"
-        name: "{{ mysql_user_name }}"
-        password: "{{ mysql_user_password }}"
-        priv: "{{ mysql_user_priv }}"
-        host: "{{ mysql_user_host }}"
+        name: "{{ mysql_db_name }}"
+        encoding: "{{ mysql_db_encoding }}"
         state: present
