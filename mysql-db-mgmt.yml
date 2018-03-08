@@ -1,0 +1,24 @@
+---
+- name: Manage MySQL Servers 
+  hosts: DB
+  connection: local
+
+  vars: 
+    mysql_user: ''
+    mysql_password: ''
+    mysql_user_name: ''
+    mysql_user_password: ''
+    mysql_user_priv: ''
+    mysql_user_host: ''
+
+  tasks: 
+    - name: Create MySQL User
+      mysql_user:
+        login_host: "{{ inventory_hostname }}"
+        login_user: "{{ mysql_user }}"
+        login_password: "{{ mysql_password }}"
+        name: "{{ mysql_user_name }}"
+        password: "{{ mysql_user_password }}"
+        priv: "{{ mysql_user_priv }}"
+        host: "{{ mysql_user_host }}"
+        state: present
