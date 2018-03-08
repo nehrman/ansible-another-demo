@@ -1,1 +1,7 @@
-
+---
+- name: Manage User for NUX systems
+  hosts: linux
+  
+  vars: 
+    user_name: "{{ user_name }}"
+    
