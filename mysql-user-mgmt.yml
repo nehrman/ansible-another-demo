@@ -1,7 +1,7 @@
 ---
 - name: Manage MySQL Servers 
   hosts: DB
-  connection: local
+#  connection: local
 
   vars: 
     mysql_user: ''
