@@ -13,8 +13,8 @@
       user:
         name: "{{ user_name }}"
         password: "{{ user_pwd }}“
-        group: "{{ user_groups }}"
         generate_ssh_key: "{{ user_ssh_key }}"
+        groups: "{{ user_groups }}"
         ssh_key_bits: 2048
         ssh_key_type: rsa
         state: present
