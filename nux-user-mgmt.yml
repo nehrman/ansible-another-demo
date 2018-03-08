@@ -3,5 +3,19 @@
   hosts: linux
   
   vars: 
-    user_name: "{{ user_name }}"
-    
+    user_name: ''
+    user_pwd: ''
+    user_groups: ''
+    user_ssh_key: ''
+  
+  tasks:
+    - name: Ensure user "{{ user_name }}" is present
+      user:
+        name: "{{ user_name }}"
+        password: "{{ user_pwd }}“
+        groups: "{{ user_groups }}"
+        generate_ssh_key: "{{ user_ssh_key }}"
+        ssh_key_bits: 2048
+        ssh_key_type: rsa
+        state: present
+        
