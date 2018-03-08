@@ -13,7 +13,7 @@
       user:
         name: "{{ user_name }}"
         password: "{{ user_pwd }}“
-        groups: "{{ user_groups }}"
+        group: "{{ user_groups }}"
         generate_ssh_key: "{{ user_ssh_key }}"
         ssh_key_bits: 2048
         ssh_key_type: rsa
