@@ -12,7 +12,7 @@
     mysql_user_host: ''
 
   tasks: 
-    - name: Create MySQL User
+    - name: Ensure MySQL "{{ mysql_user_name }}" is present
       mysql_user:
         login_host: "{{ inventory_hostname }}"
         login_user: "{{ mysql_user }}"
