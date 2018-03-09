@@ -8,6 +8,7 @@
     dns_zone: ''
     dns_type: ''
     dns_state: ''
+    dns_ptr: ''
   
   tasks:
     - name: "Ensure DNS Record for {{ dns_name }} with type {{ dns_type }} is {{ dns_state }}"
@@ -17,4 +18,5 @@
         target: "{{ dns_target }}"
         zone: "{{ dns_zone }}"
         type: "{{ dns_type }}"
+        createptr: "{{ dns_ptr }}"
         ensure: "{{ dns_state }}"
