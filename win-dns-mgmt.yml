@@ -1,0 +1,20 @@
+---
+- name: Manage DNS Record for Windows DNS Server
+  hosts: dc
+  
+  vars:
+    dns_name: ''
+    dns_target: ''
+    dns_zone: ''
+    dns_type: ''
+    dns_state: ''
+  
+  tasks:
+    - name: "Ensure DNS Record for {{ dns_name }} with type {{ dns_type }} is {{ dns_state }}"
+      win_dsc:
+        resource_name: xdnsserver
+        name: "{{ dns_name }}"
+        target: "{{ dns_target }}"
+        zone: "{{ dns_zone }}"
+        type: "{{ dns_type }}"
+        ensure: "{{ dns_state }}"
