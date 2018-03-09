@@ -12,7 +12,7 @@
   tasks:
     - name: "Ensure DNS Record for {{ dns_name }} with type {{ dns_type }} is {{ dns_state }}"
       win_dsc:
-        resource_name: xdnsserver
+        resource_name: xDnsRecord
         name: "{{ dns_name }}"
         target: "{{ dns_target }}"
         zone: "{{ dns_zone }}"
