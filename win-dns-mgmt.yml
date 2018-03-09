@@ -18,5 +18,5 @@
         target: "{{ dns_target }}"
         zone: "{{ dns_zone }}"
         type: "{{ dns_type }}"
-        createptr: "{{ dns_ptr }}"
+        createptr: "{{ dns_ptr | default('False') }}"
         ensure: "{{ dns_state }}"
